@@ -130,7 +130,7 @@ proc run_placement {args} {
 	if { $::env(RUN_RESIZER_OVERBUFFER) == 1} {
 		repair_wire_length
 	}
-	if { $::env(RUN_RESIZER_OVERBUFFER) == 1} {
+	if { $::env(RUN_RESIZER_HOLD_VIOLATIONS) == 1} {
 		repair_hold_violations
 	}
 	#try_catch replace < $::env(SCRIPTS_DIR)/replace_io.tcl |& tee $::env(TERMINAL_OUTPUT) $::env(replaceio_log_file_tag).log
