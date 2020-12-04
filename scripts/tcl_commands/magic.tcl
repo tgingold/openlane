@@ -31,7 +31,7 @@ proc run_magic {args} {
 				-rcfile $::env(MAGIC_MAGICRC) \
 				$::env(SCRIPTS_DIR)/magic.tcl \
 				</dev/null \
-				|& tee $::env(TERMINAL_OUTPUT) $::env(magic_log_file_tag).log
+				|& tee $::env(TERMINAL_OUTPUT) $::env(magic_log_file_tag).gds.log
 		set ::env(CURRENT_GDS) $::env(magic_result_file_tag).gds
 		file copy -force $::env(MAGIC_MAGICRC) $::env(RESULTS_DIR)/magic/.magicrc
 
@@ -42,7 +42,7 @@ proc run_magic {args} {
 				-rcfile $::env(MAGIC_MAGICRC) \
 				$::env(SCRIPTS_DIR)/magic_mag.tcl \
 				</dev/null \
-				|& tee $::env(TERMINAL_OUTPUT) $::env(magic_log_file_tag).log
+				|& tee $::env(TERMINAL_OUTPUT) $::env(magic_log_file_tag).mag.log
 		set ::env(CURRENT_GDS) $::env(magic_result_file_tag).gds
 		file copy -force $::env(MAGIC_MAGICRC) $::env(RESULTS_DIR)/magic/.magicrc
 
